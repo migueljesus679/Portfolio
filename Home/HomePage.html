@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartoon Portfolio</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Comic Neue for headings, Inter for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e0eafc 100%);
+            font-family: 'Inter', Arial, sans-serif;
+            color: #222;
+            overflow-x: hidden;
+        }
+        .portfolio-header {
+            margin-top: 48px;
+            margin-bottom: 48px;
+            text-align: center;
+            color: #ff6f61;
+            position: relative;
+            z-index: 1;
+        }
+        .portfolio-header h1 {
+            font-family: 'Comic Neue', cursive, sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #ff6f61;
+            letter-spacing: 1px;
+        }
+        .portfolio-header p {
+            font-size: 1.2rem;
+            color: #5a6a85;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        /* Animated background elements */
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .cloud, .star {
+            position: absolute;
+            opacity: 0.5;
+            filter: grayscale(20%) brightness(0.95);
+        }
+        .cloud {
+            width: 110px;
+            animation: floatCloud 18s linear infinite;
+        }
+        .cloud.cloud2 {
+            left: 70vw; top: 10vh;
+            width: 80px;
+            animation-duration: 22s;
+            animation-delay: 4s;
+        }
+        .cloud.cloud3 {
+            left: 30vw; top: 60vh;
+            width: 60px;
+            animation-duration: 25s;
+            animation-delay: 8s;
+        }
+        @keyframes floatCloud {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(30px) scale(1.05); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        .star {
+            width: 28px;
+            animation: twinkleStar 6s ease-in-out infinite;
+        }
+        .star.star2 {
+            left: 80vw; top: 30vh;
+            width: 20px;
+            animation-duration: 8s;
+            animation-delay: 2s;
+        }
+        .star.star3 {
+            left: 15vw; top: 70vh;
+            width: 16px;
+            animation-duration: 7s;
+            animation-delay: 3s;
+        }
+        @keyframes twinkleStar {
+            0%, 100% { opacity: 0.5; transform: scale(1);}
+            50% { opacity: 0.8; transform: scale(1.15);}
+        }
+        .card {
+            border-radius: 18px;
+            border: none;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(255, 111, 97, 0.08);
+            transition: box-shadow 0.2s, transform 0.2s;
+            z-index: 1;
+        }
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(255, 111, 97, 0.16);
+            transform: translateY(-4px) scale(1.02);
+        }
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+            border-radius: 18px 18px 0 0;
+            border-bottom: 2px solid #ffe0b2;
+            background: #f9e7fe;
+        }
+        .card-title {
+            font-family: 'Comic Neue', cursive, sans-serif;
+            color: #ff6f61;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .card-text {
+            color: #5a6a85;
+            font-size: 1rem;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #ffb347 0%, #ff6f61 100%);
+            border: none;
+            border-radius: 12px;
+            font-family: 'Comic Neue', cursive, sans-serif;
+            font-size: 1rem;
+            padding: 8px 24px;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #ff6f61 0%, #ffb347 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="animated-bg">
+        <img src="https://img.icons8.com/clouds/120/000000/cloud.png" class="cloud" style="left:10vw;top:15vh;">
+        <img src="https://img.icons8.com/clouds/120/000000/cloud.png" class="cloud cloud2">
+        <img src="https://img.icons8.com/clouds/120/000000/cloud.png" class="cloud cloud3">
+        <img src="https://img.icons8.com/color/48/000000/star.png" class="star" style="left:60vw;top:20vh;">
+        <img src="https://img.icons8.com/color/48/000000/star.png" class="star star2">
+        <img src="https://img.icons8.com/color/48/000000/star.png" class="star star3">
+    </div>
+    <div class="container">
+        <div class="portfolio-header">
+            <img src="https://img.icons8.com/color/96/000000/paint-palette.png" alt="Cartoon Palette" style="filter: grayscale(10%) brightness(0.95);">
+            <h1>My Cartoon Projects</h1>
+            <p class="lead">A playful showcase of my work, with a professional touch</p>
+        </div>
+        <div class="row g-4">
+            <!-- Project Card 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://img.icons8.com/color/400/000000/rocket--v2.png" class="card-img-top" alt="Project 1" style="filter: grayscale(10%) brightness(0.95);">
+                    <div class="card-body">
+                        <h5 class="card-title">Rocket App</h5>
+                        <p class="card-text">A fun yet robust app for launching and tracking projects. Built with HTML, CSS, and Bootstrap.</p>
+                        <a href="#" class="btn btn-primary" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://img.icons8.com/color/400/000000/unicorn.png" class="card-img-top" alt="Project 2" style="filter: grayscale(10%) brightness(0.95);">
+                    <div class="card-body">
+                        <h5 class="card-title">Unicorn Tracker</h5>
+                        <p class="card-text">Track unique assets with a playful interface and professional analytics dashboard.</p>
+                        <a href="#" class="btn btn-primary" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://img.icons8.com/color/400/000000/robot-2.png" class="card-img-top" alt="Project 3" style="filter: grayscale(10%) brightness(0.95);">
+                    <div class="card-body">
+                        <h5 class="card-title">Robot Chat</h5>
+                        <p class="card-text">A friendly chat platform with cartoon avatars and a clean, professional user experience.</p>
+                        <a href="#" class="btn btn-primary" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle CDN (optional for interactive components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
